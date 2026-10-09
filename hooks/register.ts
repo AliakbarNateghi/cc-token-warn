@@ -15,9 +15,9 @@ export const parseTokens = (s: string): number[] =>
 export const fmt = (n: number): string =>
   n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(n)
 
-// Every token the API counted: input, output, cache reads and cache writes.
+// Input, output and cache writes. Cache reads are left out: they re-count the same context every turn.
 const sum = (u: TurnUsage) =>
-  u.input_tokens + u.output_tokens + u.cache_read_input_tokens + u.cache_creation_input_tokens
+  u.input_tokens + u.output_tokens + u.cache_creation_input_tokens
 
 export const register: Register = (on, options) => {
   const thresholds = parseTokens(String(options.thresholds ?? '1M,5M,10M'))
