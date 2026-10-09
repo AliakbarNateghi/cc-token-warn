@@ -6,7 +6,7 @@ A Claude Code mod that keeps an eye on token use.
 - Shows one toast each time the total passes a threshold (default 1M, 5M, 10M): `⚠ session passed 5M tokens`.
 - Shows a toast when one subagent or one Workflow run uses more than a limit (default 500k).
 
-Totals come from the usage the API reports at the end of each turn (main loop and subagents). They count all four token kinds: input, output, cache reads and cache writes.
+Totals come from the usage the API reports at the end of each turn (main loop and subagents). They count input, output and cache-write tokens. Cache reads are left out, since they re-count the same context every turn.
 
 ## Install
 
