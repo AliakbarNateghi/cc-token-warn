@@ -1,0 +1,17 @@
+{
+  "name": "cc-token-warn",
+  "owner": {
+    "name": "AliakbarNateghi"
+  },
+  "plugins": [
+    {
+      "name": "token-warn",
+      "source": "./",
+      "description": "Warn when a session, subagent or Workflow run burns a lot of tokens.",
+      "author": {
+        "name": "AliakbarNateghi"
+      }
+    }
+  ],
+  "description": "token-warn: a Claude Code mod that warns on heavy token use."
+}

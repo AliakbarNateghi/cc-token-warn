@@ -1,0 +1,24 @@
+{
+  "name": "token-warn",
+  "version": "0.1.0",
+  "description": "Status entry with the session's running token total, plus toasts when it passes thresholds or one subagent or Workflow run uses a lot.",
+  "author": {
+    "name": "AliakbarNateghi"
+  },
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "thresholds": {
+      "type": "string",
+      "title": "Session thresholds",
+      "description": "Comma list of session totals to warn at (k and M suffixes allowed).",
+      "default": "1M,5M,10M"
+    },
+    "agentLimit": {
+      "type": "number",
+      "title": "Subagent / Workflow limit",
+      "description": "Warn when one subagent or Workflow run uses more tokens than this.",
+      "default": 500000
+    }
+  }
+}
